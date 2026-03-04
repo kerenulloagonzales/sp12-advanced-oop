@@ -22,3 +22,16 @@ This problem explores composition, where one object creates and owns another.
    "Battery at 100% — ready for action!"
 '''
 
+class Battery:
+    def __init__(self, charge_percent):
+        self.charge_percent = charge_percent
+
+
+class Robot:
+    def __init__(self):
+        self.battery = Battery(100)  # Robot creates and owns its own Battery
+
+    def check_power(self):
+        return f"Battery at {self.battery.charge_percent}% — ready for action!"
+
+#in process*
